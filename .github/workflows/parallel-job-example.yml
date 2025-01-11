@@ -41,6 +41,12 @@ jobs:
         if: github.ref != 'refs/heads/master'
         run: echo "This is not the master branch."
 
+      - name: Install dependencies
+        run: npm install
+
+      - name: Clear npm cache
+        run: npm cache clean --force  
+
       - name: Run tests
         run: npm test
 
@@ -66,6 +72,12 @@ jobs:
       - name: Print a message for non-master branches
         if: github.ref != 'refs/heads/master'
         run: echo "This is not the master branch."
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Clear npm cache
+        run: npm cache clean --force
 
       - name: Run tests
         run: npm test
