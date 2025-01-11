@@ -2,20 +2,24 @@
 
 name: My First Workflow
 
-# Controls when the workflow will run
+# Triggers for the workflow
 on:
+  # Manual trigger using the workflow_dispatch event
   workflow_dispatch:
+
+  # Automatic trigger on push events to the main branch
   push:
-    branches: 
-     - master
+    branches:
+      - master
+
+  # Automatic trigger on pull request events targeting the main branch
   pull_request:
-    branches: 
-     - master
+    branches:
+      - master
+
+  # Scheduled trigger at 5:00 AM UTC, Monday through Friday
   schedule:
     - cron: '0 5 * * 1-5'
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
