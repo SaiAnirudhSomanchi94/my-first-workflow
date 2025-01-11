@@ -42,10 +42,7 @@ jobs:
         run: echo "This is not the master branch."
 
       - name: Install dependencies
-        run: npm install
-
-      - name: Clear npm cache
-        run: npm cache clean --force  
+        run: npm init -y
 
       - name: Run tests
         run: npm test
@@ -74,10 +71,7 @@ jobs:
         run: echo "This is not the master branch."
 
       - name: Install dependencies
-        run: npm install
-
-      - name: Clear npm cache
-        run: npm cache clean --force
+        run: npm init -y
 
       - name: Run tests
         run: npm test
