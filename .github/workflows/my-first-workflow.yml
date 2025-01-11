@@ -4,11 +4,15 @@ name: My First Workflow
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "master" branch
+  workflow_dispatch:
   push:
-    branches: [ "master" ]
+    branches: 
+     - master
   pull_request:
-    branches: [ "master" ]
+    branches: 
+     - master
+  schedule:
+    - cron: '0 5 * * 1-5'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -20,12 +24,12 @@ jobs:
 
     steps:
     - name: Check out repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
-    - name: Use Node.js 18
+    - name: Use Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: 18
+        node-version: latest
 
     - name: Print a message
       run: echo "Hello, world!"
