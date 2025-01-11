@@ -1,0 +1,11 @@
+{
+    "name": "my-app",
+    "version": "1.0.0",
+    "scripts": {
+      "test": "jest"  // Define your test command here
+    },
+    "dependencies": {
+      "jest": "^27.0.0"  // Example dependency for testing
+    }
+  }
+  
